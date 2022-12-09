@@ -1,0 +1,575 @@
+###############################
+##### PCL for PictureBADE #####
+###############################
+
+### VARIABLE DECLARATIONS ###
+int num_runs = 2; # number of times the entire task will be repeated
+int num_trials = 40;  # total number of trials per run
+int num_trials_per_cond = 10; # number of trials per condition per run
+int current_resp; # updated after each response
+int last_resp; # final response for image 1 kept to display in image 2
+int time_limit = 4000; # length of trial in ms
+int num_conds = 4;
+int stim_onset;
+int current_resp_onset = 0;
+int prev_resp_onset = 0;
+int current_resp_dur = 0;
+int prev_resp_dur = 0;
+int YYcount=0;
+int NNcount=0;
+int YNcount=0;
+int NYcount=0;
+int resp_ct;
+
+### ARRAY DECLARATIONS ###
+#RUN A ITI#
+#array<int>YYitisA[num_trials_per_cond]={5000, 5000, 2500, 3500, 10000, 2500, 20000, 2500, 3500, 2500};
+#array<int>NNitisA[num_trials_per_cond]={2500, 5000, 3500, 20000, 3500, 10000, 2500, 5000, 2500, 2500};
+#array<int>YNitisA[num_trials_per_cond]={2500, 10000, 2500, 2500, 5000, 20000, 3500, 2500, 5000, 3500};
+#array<int>NYitisA[num_trials_per_cond]={3500, 20000, 2500, 3500, 2500, 2500, 5000, 10000, 5000, 2500};
+
+#RUN B ITI#
+array<int>YYitisB[num_trials_per_cond]={5000, 2500, 2500, 10000, 2500, 5000, 3500, 20000, 3500, 2500};
+array<int>NNitisB[num_trials_per_cond]={2500, 10000, 2500, 2500, 5000, 5000, 3500, 20000, 3500, 2500};
+array<int>YNitisB[num_trials_per_cond]={3500, 2500, 5000, 5000, 20000, 2500, 2500, 2500, 10000, 3500};
+array<int>NYitisB[num_trials_per_cond]={2500, 5000, 10000, 2500, 20000, 2500, 3500, 2500, 5000, 3500};
+
+array<string>true_words[num_trials*num_runs]={"Acorn","Airplane","Alligator","Anchor","Angel","Apple","Backpack","Bath Tub","Beaver","Bed","Beehive","Bike","Blender","Book","Butterfly","Cactus","Cake","Calendar","Canoe","Car","Carousel","Carrot","Cat","Chair","Cheese","Coins","Computer","Corn","Crown","Desk","Dragonfly","Dress","Elephant","Feather","Fireplace","Fish","Fishbowl","Flamingo","Flashlight","Foot","Football","Garbage Can","Gas Pump","Gate","Gift","Grapes","Hamburger","Iron","Key","Kite","Ladybug","Lamp","Lantern","Mailbox","Monkey","Mouse","Onion","Palm Tree","Pan","Penguin","Radio","Ring","Rocket","Sailboat","Scissors","Snail","Snake","Strawberry","Sunflower","Swing Set","Telephone","Tennis Racquet","Tent","Toilet","Trumpet","Turkey","Turtle","Umbrella","Washing Machine","Windmill"};
+array<string>lure_words[num_trials*num_runs]={"Cloud","Crayon","Dragon","Cross","Pear","Head","Nun","Lamp","Dog","Bench","Ice Cream","Glasses","Sundae","Road","Flower","Candles","Paint Can","Fence","Pillow","Pot","House","Teeth","Caterpiller","Road","Puzzle Piece","Film Reels","Theatre","Light Bulb","Shower Curtain","House","Fork","Christmas Tree","Hot-Air Balloon","Grass","Tower","Eye","Desert","Rat","Syringe","Arm","Glass","Kite","Robot","Tennis Court","Curtain","Cotton Candy","Snowman","Jacket","Map","Net","Steering Wheel","Urn","Bell","Dog House","Scorpion","Balloon","Hair","Giraffe","Teapot","Water Jug","Fly","Ship's Wheel","Fish","Golf Course","Bowtie","Seashell","Necklace","Heart","Clock","Tent","Ink Bottle","Mirror","Mountains","Bird Bath","Belt Buckle","Bonnet","Igloo","Baseball Cap","Package","Propeller"};
+array<string>absurd_words[num_trials*num_runs]={"Skunk","Walnut","Garlic","Thumb","Milk","Boat","Ape","Lamb","Ear","Glass","Squirrel","Blanket","Rabbit","Plum","Pencil","Bandage","Bracelet","Clown","Beetle","Leg","Chalk","Peach","Auditorium","Deer","Grandmother","Landscape","Chicken","Nightgown","Typewriter","Bread","Sofa","Cigarette","Handkerchief","Sheep","Sugar","Bed","Walrus","Ice","Sparrow","Cow","Knife","Nose","Puppy","Grasshopper","Cabbage","Dandelion","Whistle","Butter","Eye","Jaw","Furniture","Wig","Lion","Mattress","Cucumber","Toaster","Pear","Pudding","Kitten","Magazine","Sun","Breakfast","Feet","Medicine","Coffee","Forehead","Chestnut","Pants","Broom","Pond","Limousine","Spider","Earthworm","Clothing","Tablespoon","Needle","Tulip","Photograph","Lettuce","Raspberry"};
+
+#RUN A STIMULI#
+#array<int>YY_Astims[num_trials_per_cond]={18, 45, 17, 54, 3, 30, 78, 52, 63, 35};
+#array<int>NN_Astims[num_trials_per_cond]={44, 46, 67, 76, 5, 58, 42, 62, 31, 39};
+#array<int>YN_Astims[num_trials_per_cond]={1, 32, 79, 64, 9, 21, 43, 48, 77, 40};
+#array<int>NY_Astims[num_trials_per_cond]={53, 41, 4, 16, 51, 7, 72, 56, 50, 20};
+
+#RUN B STIMULI#
+array<int>YY_Bstims[num_trials_per_cond]={14, 28, 29, 12, 24, 49, 73, 80, 25, 22};
+array<int>NN_Bstims[num_trials_per_cond]={47, 74, 23, 65, 34, 59, 15, 11, 70, 57};
+array<int>YN_Bstims[num_trials_per_cond]={19, 8, 71, 75, 66, 6, 27, 55, 36, 13};
+array<int>NY_Bstims[num_trials_per_cond]={61, 38, 10, 69, 26, 2, 60, 37, 68, 33};
+
+array<int>conditions[num_trials]={1,4,2,3,2,1,2,1,2,4,1,3,4,3,3,1,2,3,4,1,4,2,2,4,3,2,4,1,2,4,1,3,3,2,4,1,4,3,3,1};
+
+### SUBROUTINE FOR CONFIRM YES TRIAL ###
+sub YY_trial begin
+
+string current_YY_word=true_words[YY_Bstims[YYcount]];
+string current_word_true=true_words[YY_Bstims[YYcount]];
+
+## Image 1 Presentation ##
+	img_txt.set_caption(current_YY_word);
+	img_txt.redraw();
+	img.unload();
+	img.set_filename("YY_" + current_word_true + "_img1.png"); img.load();
+	pic_picture_event.set_event_code(current_YY_word + "_YY1");
+	
+	resp_ct = response_manager.total_response_count();
+	
+	rating_yes.set_color(0, 0, 0);
+	rating_no.set_color(0, 0, 0);
+	
+	stim_onset = clock.time(); # onset for img 1 in ms
+	generic_pic_trial.present();
+	prev_resp_onset = 0;
+	current_resp = 0;
+
+# Image 1 Rating Loop #
+	loop int start_time = stim_onset; int dur; until clock.time()>= start_time + time_limit begin
+		if response_manager.total_response_count() == resp_ct then
+			current_resp = 0;
+		elseif response_manager.total_response_count() > resp_ct then
+			resp_ct = response_manager.total_response_count();
+			current_resp = response_manager.last_response();
+			current_resp_onset = (clock.time() - stim_onset); #within-trial onset time
+			if current_resp == 1 then
+				rating_yes.set_color(255, 255, 255);
+				rating_no.set_color(0, 0, 0);
+			elseif current_resp == 2 then
+				rating_yes.set_color(0, 0, 0);
+				rating_no.set_color(255, 255, 255);
+			end; # end rating if
+			response_trial_event.set_type(first_response);
+			current_resp_dur = (current_resp_onset - prev_resp_onset);
+			dur = (time_limit - (current_resp_onset));
+			if dur > 0 then
+				response_trial_event.set_duration(dur);
+			else
+				break
+			end; # end duration if
+			response_trial_event.present();
+			prev_resp_dur = current_resp_dur;
+			prev_resp_onset = current_resp_onset;
+		end; # end response if
+	end; #end time loop
+	last_resp = current_resp;
+	prev_resp_dur = 0;
+	prev_resp_onset = 0;
+	
+## Image 2 Presentation ##
+	img.unload();
+	img.set_filename("YY_" + current_word_true + "_img2.png"); img.load();
+	pic_picture_event.set_event_code(current_YY_word + "_YY2");
+
+	resp_ct = response_manager.total_response_count();
+	
+	rating_yes.set_color(0, 0, 0);
+	rating_no.set_color(0, 0, 0);
+	
+# Display Response To Image 1 #
+	if last_resp == 1 then
+		rating_yes.set_color(100, 100, 100);
+		rating_no.set_color(0, 0, 0);
+	elseif current_resp == 2 then
+		rating_yes.set_color(0, 0, 0);
+		rating_no.set_color(100, 100, 100);
+	end; # end rating if
+	
+	stim_onset = clock.time(); # onset for img 2 in ms
+	generic_pic_trial.present();
+	prev_resp_onset = 0;
+	
+# Image 2 Rating Loop #
+	loop int start_time = stim_onset; int dur; until clock.time()>= start_time + time_limit begin
+		if response_manager.total_response_count() > resp_ct then
+			resp_ct = response_manager.total_response_count();
+			current_resp = response_manager.last_response();
+			current_resp_onset = (clock.time() - stim_onset); #within-trial onset time
+			if current_resp == 1 then
+				rating_yes.set_color(255, 255, 255);
+				rating_no.set_color(0, 0, 0);
+			elseif current_resp == 2 then
+				rating_yes.set_color(0, 0, 0);
+				rating_no.set_color(255, 255, 255);
+			end; # end rating if
+			response_trial_event.set_type(first_response);
+			current_resp_dur = (current_resp_onset - prev_resp_onset);
+			dur = (time_limit - (current_resp_onset));
+			if dur > 0 then
+				response_trial_event.set_duration(dur);
+			else
+				break
+			end; # end duration if
+			response_trial_event.present();
+			prev_resp_dur = current_resp_dur;
+			prev_resp_onset = current_resp_onset;
+		end; # end response if
+	end; #end time loop
+	last_resp = current_resp;
+	prev_resp_dur = 0;
+	prev_resp_onset = 0;
+
+## Image 3 Presentation ##
+	img_txt.set_caption(current_word_true);
+	img_txt.redraw();
+	img.unload();
+	img.set_filename(current_word_true + "_img3.png"); img.load();
+	finalpic_picture_event.set_event_code(current_YY_word + "_YY3");
+
+	generic_finalpic_trial.present();
+end; #end sub
+
+### SUBROUTINE FOR CONFIRM NO TRIAL ###
+sub NN_trial begin
+
+string current_NN_word=absurd_words[NN_Bstims[NNcount]];
+string current_word_true=true_words[NN_Bstims[NNcount]];
+
+## Image 1 Presentation ##
+	img_txt.set_caption(current_NN_word);
+	img_txt.redraw();
+	img.unload();
+	img.set_filename("NN_" + current_word_true + "_img1.png"); img.load();
+	pic_picture_event.set_event_code(current_NN_word + "_NN1");
+	
+	resp_ct = response_manager.total_response_count();
+	
+	rating_yes.set_color(0, 0, 0);
+	rating_no.set_color(0, 0, 0);
+	
+	stim_onset = clock.time(); # onset for img 1 in ms
+	generic_pic_trial.present();
+	prev_resp_onset = 0;
+	current_resp = 0;
+
+# Image 1 Rating Loop #
+	loop int start_time = stim_onset; int dur; until clock.time()>= start_time + time_limit begin
+		if response_manager.total_response_count() == resp_ct then
+			current_resp = 0;
+		elseif response_manager.total_response_count() > resp_ct then
+			resp_ct = response_manager.total_response_count();
+			current_resp = response_manager.last_response();
+			current_resp_onset = (clock.time() - stim_onset); #within-trial onset time
+			if current_resp == 1 then
+				rating_yes.set_color(255, 255, 255);
+				rating_no.set_color(0, 0, 0);
+			elseif current_resp == 2 then
+				rating_yes.set_color(0, 0, 0);
+				rating_no.set_color(255, 255, 255);
+			end; # end rating if
+			response_trial_event.set_type(first_response);
+			current_resp_dur = (current_resp_onset - prev_resp_onset);
+			dur = (time_limit - (current_resp_onset));
+			if dur > 0 then
+				response_trial_event.set_duration(dur);
+			else
+				break
+			end; # end duration if
+			response_trial_event.present();
+			prev_resp_dur = current_resp_dur;
+			prev_resp_onset = current_resp_onset;
+		end; # end response if
+	end; #end time loop
+	last_resp = current_resp;
+	prev_resp_dur = 0;
+	prev_resp_onset = 0;
+	
+## Image 2 Presentation ##
+	img.unload();
+	img.set_filename("NN_" + current_word_true + "_img2.png"); img.load();
+	pic_picture_event.set_event_code(current_NN_word + "_NN2");
+
+	resp_ct = response_manager.total_response_count();
+	
+	rating_yes.set_color(0, 0, 0);
+	rating_no.set_color(0, 0, 0);
+	
+# Display Response To Image 1 #
+	if last_resp == 1 then
+		rating_yes.set_color(100, 100, 100);
+		rating_no.set_color(0, 0, 0);
+	elseif current_resp == 2 then
+		rating_yes.set_color(0, 0, 0);
+		rating_no.set_color(100, 100, 100);
+	end; # end rating if
+	
+	stim_onset = clock.time(); # onset for img 2 in ms
+	generic_pic_trial.present();
+	prev_resp_onset = 0;
+	
+# Image 2 Rating Loop #
+	loop int start_time = stim_onset; int dur; until clock.time()>= start_time + time_limit begin
+		if response_manager.total_response_count() > resp_ct then
+			resp_ct = response_manager.total_response_count();
+			current_resp = response_manager.last_response();
+			current_resp_onset = (clock.time() - stim_onset); #within-trial onset time
+			if current_resp == 1 then
+				rating_yes.set_color(255, 255, 255);
+				rating_no.set_color(0, 0, 0);
+			elseif current_resp == 2 then
+				rating_yes.set_color(0, 0, 0);
+				rating_no.set_color(255, 255, 255);
+			end; # end rating if
+			response_trial_event.set_type(first_response);
+			current_resp_dur = (current_resp_onset - prev_resp_onset);
+			dur = (time_limit - (current_resp_onset));
+			if dur > 0 then
+				response_trial_event.set_duration(dur);
+			else
+				break
+			end; # end duration if
+			response_trial_event.present();
+			prev_resp_dur = current_resp_dur;
+			prev_resp_onset = current_resp_onset;
+		end; # end response if
+	end; #end time loop
+	last_resp = current_resp;
+	prev_resp_dur = 0;
+	prev_resp_onset = 0;
+
+## Image 3 Presentation ##
+	img_txt.set_caption(current_word_true);
+	img_txt.redraw();
+	img.unload();
+	img.set_filename(current_word_true + "_img3.png"); img.load();
+	finalpic_picture_event.set_event_code(current_NN_word + "_NN3");
+
+	generic_finalpic_trial.present();
+end; #end sub
+
+### SUBROUTINE FOR DISCONFIRM UP (NO-YES) TRIAL ###
+sub NY_trial begin
+
+string current_NY_word=true_words[NY_Bstims[NYcount]];
+string current_word_true=true_words[NY_Bstims[NYcount]];
+
+## Image 1 Presentation ##
+	img_txt.set_caption(current_NY_word);
+	img_txt.redraw();
+	img.unload();
+	img.set_filename("NY_" + current_word_true + "_img1.png"); img.load();
+	pic_picture_event.set_event_code(current_NY_word + "_NY1");
+
+	int resp_ct1 = response_manager.total_response_count();
+	
+	rating_yes.set_color(0, 0, 0);
+	rating_no.set_color(0, 0, 0);
+
+	stim_onset = clock.time(); # onset for img 1 in ms
+	generic_pic_trial.present();
+	prev_resp_onset = 0;
+	current_resp = 0;
+
+# Image 1 Rating Loop #	
+	loop int start_time = stim_onset; int dur; until clock.time()>= start_time + time_limit begin
+		if response_manager.total_response_count() == resp_ct then
+			current_resp = 0;
+		elseif response_manager.total_response_count() > resp_ct1 then
+			resp_ct1 = response_manager.total_response_count();
+			current_resp = response_manager.last_response();
+			current_resp_onset = (clock.time() - stim_onset); #within-trial onset time
+			if current_resp == 1 then
+				rating_yes.set_color(255, 255, 255);
+				rating_no.set_color(0, 0, 0);
+			elseif current_resp == 2 then
+				rating_yes.set_color(0, 0, 0);
+				rating_no.set_color(255, 255, 255);
+			end; # end rating if
+			response_trial_event.set_type(first_response);
+			current_resp_dur = (current_resp_onset - prev_resp_onset);
+			dur = (time_limit - (current_resp_onset));
+			if dur > 0 then
+				response_trial_event.set_duration(dur);
+			else
+				break
+			end; # end duration if
+			response_trial_event.present();
+			prev_resp_dur = current_resp_dur;
+			prev_resp_onset = current_resp_onset;
+		end; # end response if
+	end; #end time loop
+	last_resp = current_resp;
+	prev_resp_dur = 0;
+	prev_resp_onset = 0;	
+	
+## Image 2 Presentation ##
+	img.unload();
+	img.set_filename("NY_" + current_word_true + "_img2.png"); img.load();
+	pic_picture_event.set_event_code(current_NY_word + "_NY2");
+
+	int resp_ct2 = response_manager.total_response_count();
+	
+	rating_yes.set_color(0, 0, 0);
+	rating_no.set_color(0, 0, 0);
+	
+# Display Response To Image 1 #
+	if last_resp == 1 then
+		rating_yes.set_color(100, 100, 100);
+		rating_no.set_color(0, 0, 0);
+	elseif current_resp == 2 then
+		rating_yes.set_color(0, 0, 0);
+		rating_no.set_color(100, 100, 100);
+	end; # end rating if
+	
+	stim_onset = clock.time(); # onset for img 2 in ms
+	generic_pic_trial.present();
+	prev_resp_onset = 0;
+		
+# Image 2 Rating Loop #
+	loop int start_time = stim_onset; int dur; until clock.time()>= start_time + time_limit begin
+		if response_manager.total_response_count() > resp_ct2 then
+			resp_ct2 = response_manager.total_response_count();
+			current_resp = response_manager.last_response();
+			current_resp_onset = (clock.time() - stim_onset); #within-trial onset time
+			if current_resp == 1 then
+				rating_yes.set_color(255, 255, 255);
+				rating_no.set_color(0, 0, 0);
+			elseif current_resp == 2 then
+				rating_yes.set_color(0, 0, 0);
+				rating_no.set_color(255, 255, 255);
+			end; # end rating if
+			response_trial_event.set_type(first_response);
+			current_resp_dur = (current_resp_onset - prev_resp_onset);
+			dur = (time_limit - (current_resp_onset));	
+			if dur > 0 then
+				response_trial_event.set_duration(dur);
+			else
+				break
+			end; # end duration if
+			response_trial_event.present();
+			prev_resp_dur = current_resp_dur;
+			prev_resp_onset = current_resp_onset;
+		end; # end response if
+	end; #end time loop
+	last_resp = current_resp;
+	prev_resp_dur = 0;
+	prev_resp_onset = 0;	
+
+## Image 3 Presentation ##
+	img_txt.set_caption(current_word_true);
+	img_txt.redraw();
+	img.unload();
+	img.set_filename(current_word_true + "_img3.png"); img.load();
+	finalpic_picture_event.set_event_code(current_NY_word + "_NY3");
+
+	generic_finalpic_trial.present();
+end; #end sub
+
+### SUBROUTINE FOR DISCONFIRM DOWN (YES-NO) TRIAL ###
+sub YN_trial begin
+
+string current_YN_word=lure_words[YN_Bstims[YNcount]];
+string current_word_true=true_words[YN_Bstims[YNcount]];
+
+## Image 1 Presentation ##
+	img_txt.set_caption(current_YN_word);
+	img_txt.redraw();
+	img.unload();
+	img.set_filename("YN_" + current_word_true + "_img1.png"); img.load();
+	pic_picture_event.set_event_code(current_YN_word + "_YN1");
+
+	int resp_ct1 = response_manager.total_response_count();
+	
+	rating_yes.set_color(0, 0, 0);
+	rating_no.set_color(0, 0, 0);
+
+	stim_onset = clock.time(); # onset for img 1 in ms
+	generic_pic_trial.present();
+	prev_resp_onset = 0;
+	current_resp = 0;
+
+# Image 1 Rating Loop #	
+	loop int start_time = stim_onset; int dur; until clock.time()>= start_time + time_limit begin
+		if response_manager.total_response_count() == resp_ct then
+			current_resp = 0;
+		elseif response_manager.total_response_count() > resp_ct1 then
+			resp_ct1 = response_manager.total_response_count();
+			current_resp = response_manager.last_response();
+			current_resp_onset = (clock.time() - stim_onset); #within-trial onset time
+			if current_resp == 1 then
+				rating_yes.set_color(255, 255, 255);
+				rating_no.set_color(0, 0, 0);
+			elseif current_resp == 2 then
+				rating_yes.set_color(0, 0, 0);
+				rating_no.set_color(255, 255, 255);
+			end; # end rating if
+			response_trial_event.set_type(first_response);
+			current_resp_dur = (current_resp_onset - prev_resp_onset);
+			dur = (time_limit - (current_resp_onset));
+			if dur > 0 then
+				response_trial_event.set_duration(dur);
+			else
+				break
+			end; # end duration if
+			response_trial_event.present();
+			prev_resp_dur = current_resp_dur;
+			prev_resp_onset = current_resp_onset;
+		end; # end response if
+	end; #end time loop
+	last_resp = current_resp;
+	prev_resp_dur = 0;
+	prev_resp_onset = 0;	
+	
+## Image 2 Presentation ##
+	img.unload();
+	img.set_filename("YN_" + current_word_true + "_img2.png"); img.load();
+	pic_picture_event.set_event_code(current_YN_word + "_YN2");
+
+	int resp_ct2 = response_manager.total_response_count();
+	
+	rating_yes.set_color(0, 0, 0);
+	rating_no.set_color(0, 0, 0);
+	
+# Display Response To Image 1 #
+	if last_resp == 1 then
+		rating_yes.set_color(100, 100, 100);
+		rating_no.set_color(0, 0, 0);
+	elseif current_resp == 2 then
+		rating_yes.set_color(0, 0, 0);
+		rating_no.set_color(100, 100, 100);
+	end; # end rating if
+	
+	stim_onset = clock.time(); # onset for img 2 in ms
+	generic_pic_trial.present();
+	prev_resp_onset = 0;
+		
+# Image 2 Rating Loop #
+	loop int start_time = stim_onset; int dur; until clock.time()>= start_time + time_limit begin
+		if response_manager.total_response_count() > resp_ct2 then
+			resp_ct2 = response_manager.total_response_count();
+			current_resp = response_manager.last_response();
+			current_resp_onset = (clock.time() - stim_onset); #within-trial onset time
+			if current_resp == 1 then
+				rating_yes.set_color(255, 255, 255);
+				rating_no.set_color(0, 0, 0);
+			elseif current_resp == 2 then
+				rating_yes.set_color(0, 0, 0);
+				rating_no.set_color(255, 255, 255);
+			end; # end rating if
+			response_trial_event.set_type(first_response);
+			current_resp_dur = (current_resp_onset - prev_resp_onset);
+			dur = (time_limit - (current_resp_onset));
+			if dur > 0 then
+				response_trial_event.set_duration(dur);
+			else
+				break
+			end; # end duration if
+			response_trial_event.present();
+			prev_resp_dur = current_resp_dur;
+			prev_resp_onset = current_resp_onset;
+		end; # end response if
+	end; #end time loop
+	last_resp = current_resp;
+	prev_resp_dur = 0;
+	prev_resp_onset = 0;	
+
+## Image 3 Presentation ##
+	img_txt.set_caption(current_word_true);
+	img_txt.redraw();
+	img.unload();
+	img.set_filename(current_word_true + "_img3.png"); img.load();
+	finalpic_picture_event.set_event_code(current_YN_word + "_YN3");
+
+	generic_finalpic_trial.present();
+end; #end sub
+
+### SUBROUTINE FOR ITIs ###
+
+sub sub_iti (int& iti_trl) begin
+	int current_iti;
+	if conditions[iti_trl] == 1 then
+		current_iti=YYitisB[YYcount];
+	elseif conditions[iti_trl] == 2 then
+		current_iti=NNitisB[NNcount];
+	elseif conditions[iti_trl] == 3 then
+		current_iti=YNitisB[YNcount];
+	elseif conditions[iti_trl] == 4 then
+		current_iti=NYitisB[NYcount];
+	end; # end condition if
+	
+	#int current_iti = 100; # quick ITI for debugging
+	
+	ITI_event.set_duration(current_iti);
+	ITI_event.set_event_code("ITI" + string(current_iti));
+	ITI_trial.present();
+end; # end sub
+
+### TRIAL PRESENTATION ###
+instructions_trial.present();
+start_trial.present();
+countdown_trial.present();
+fixation_trial.present();
+
+loop int j = 1 until j > num_trials
+	begin
+	if conditions[j] == 1 then
+		YYcount=YYcount+1;
+		YY_trial();
+		sub_iti(j);
+	elseif conditions[j] == 2 then
+		NNcount=NNcount+1;
+		NN_trial();
+		sub_iti(j);
+	elseif conditions[j] == 3 then
+		YNcount=YNcount+1;
+		YN_trial();
+		sub_iti(j);
+	elseif conditions[j] == 4 then
+		NYcount=NYcount+1;
+		NY_trial();
+		sub_iti(j);
+	end; #end trial presentation condition if
+	j=j+1;
+end; #end trial loop
+end_trial.present();
