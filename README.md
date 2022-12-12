@@ -13,7 +13,7 @@ Standardized README File for Psychological Experiments (replace details in squar
 <img src = "https://github.com/katielavigne/BADE-evidence-integration-task/blob/main/readme.png" width="70%" height="70%"/>
 </p>
 
-**Publication:** 
+**Publications:** 
 
 [Lavigne, Menon, & Woodward (2020). Functional brain networks underlying evidence integration and delusions in schizophrenia](https://doi.org/10.1093/schbul/sbz032)
 
