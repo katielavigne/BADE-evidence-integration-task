@@ -10,9 +10,9 @@ Image-based evidence integration task assessing the bias against disconfirmatory
 
 **Publications:** 
 
-[Lavigne, Menon, & Woodward (2020). Functional brain networks underlying evidence integration and delusions in schizophrenia](https://doi.org/10.1093/schbul/sbz032)
+Lavigne, Menon, & Woodward (2020). Functional brain networks underlying evidence integration and delusions in schizophrenia. *Schizophrenia Bulletin 46* (1), 175-183. [https://doi.org/10.1093/schbul/sbz032](https://doi.org/10.1093/schbul/sbz032)
 
-[Lavigne, Menon, Moritz, & Woodward (2020). Functional brain networks underlying evidence integration and delusional ideation](https://doi.org/10.1016/j.schres.2019.11.038)
+Lavigne, Menon, Moritz, & Woodward (2020). Functional brain networks underlying evidence integration and delusional ideation. *Schizophrenia research 216*, 302-309. [https://doi.org/10.1016/j.schres.2019.11.038](https://doi.org/10.1016/j.schres.2019.11.038)
 
 **Function(s) assessed:** cognitive bias
 
