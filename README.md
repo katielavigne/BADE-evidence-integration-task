@@ -1,13 +1,8 @@
-# BADE-evidence-integration-task
-Image-based evidence integration task assessing the bias against disconfirmatory evidence (BADE) for fMRI and EEG/offline administration
-
-Standardized README File for Psychological Experiments (replace details in square brackets []). See example [here](https://gitlab.pavlovia.org/katielavigne/verbal-fluency/blob/master/readme.md) and source code [here](https://gitlab.pavlovia.org/katielavigne/verbal-fluency/raw/master/readme.md).
-
 # BADE Evidence Integration Task
 
 ##### tags: `bias against disconfirmatory evidence, disconfirmation bias, evidence integration, hypersalience, evidence-hypothesis matches, picture, image`
 
-[Description]
+Image-based evidence integration task assessing the bias against disconfirmatory evidence (BADE) for fMRI and EEG/offline administration.
 
 <p align="center">
 <img src = "https://github.com/katielavigne/BADE-evidence-integration-task/blob/main/readme.png" width="70%" height="70%"/>
