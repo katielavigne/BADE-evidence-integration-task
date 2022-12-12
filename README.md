@@ -15,9 +15,9 @@ Standardized README File for Psychological Experiments (replace details in squar
 
 **Publication:** 
 
-(Lavigne, Menon, & Woodward (2020). Functional brain networks underlying evidence integration and delusions in schizophrenia](https://doi.org/10.1093/schbul/sbz032)
+[Lavigne, Menon, & Woodward (2020). Functional brain networks underlying evidence integration and delusions in schizophrenia](https://doi.org/10.1093/schbul/sbz032)
 
-(Lavigne, Menon, Moritz, & Woodward (2020). Functional brain networks underlying evidence integration and delusional ideation](https://doi.org/10.1016/j.schres.2019.11.038)
+[Lavigne, Menon, Moritz, & Woodward (2020). Functional brain networks underlying evidence integration and delusional ideation](https://doi.org/10.1016/j.schres.2019.11.038)
 
 **Function(s) assessed:** cognitive bias
 
