@@ -1,6 +1,6 @@
 # BADE Evidence Integration Task
 
-##### tags: `bias against disconfirmatory evidence, disconfirmation bias, evidence integration, hypersalience, evidence-hypothesis matches, picture, image`
+##### tags: `bias against disconfirmatory evidence, disconfirmation bias, evidence integration, hypersalience, evidence-hypothesis matches, picture, image, fmri, eeg`
 
 Image-based evidence integration task assessing the bias against disconfirmatory evidence (BADE) for fMRI and EEG/offline administration.
 
