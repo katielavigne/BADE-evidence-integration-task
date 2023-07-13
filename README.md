@@ -1,66 +1,53 @@
-# BADE Evidence Integration Task
-
-##### tags: `bias against disconfirmatory evidence, disconfirmation bias, evidence integration, hypersalience, evidence-hypothesis matches, picture, image, fmri, eeg`
+# BADE Evidence Integration
 
 Image-based evidence integration task assessing the bias against disconfirmatory evidence (BADE) for fMRI and EEG/offline administration.
 
-<p align="center">
-<img src = "https://github.com/katielavigne/BADE-evidence-integration-task/blob/main/readme.png" width="70%" height="70%"/>
-</p>
+**Publication:** [object Object]
 
-**Publications:** 
+**Experiment DOI:** 
 
-Lavigne, Menon, & Woodward (2020). Functional brain networks underlying evidence integration and delusions in schizophrenia. *Schizophrenia Bulletin 46* (1), 175-183. [https://doi.org/10.1093/schbul/sbz032](https://doi.org/10.1093/schbul/sbz032)
-
-Lavigne, Menon, Moritz, & Woodward (2020). Functional brain networks underlying evidence integration and delusional ideation. *Schizophrenia research 216*, 302-309. [https://doi.org/10.1016/j.schres.2019.11.038](https://doi.org/10.1016/j.schres.2019.11.038)
-
-**Function(s) assessed:** cognitive bias
+**Functions assessed:** [object Object]
 
 ## Features
-- [x] Repeatability
-- [ ] Multilingual
-- [x] Validated
-- [x] Accessibility
-- [x] Cross-platform
-- [ ] Cross-device
-- [ ] Cross-species
-
-**Alternate Forms:** 4
 
 **Languages:** English
 
-**Validation:** associated with traditional story BADE task
+**Validation:**
+  * 
+  * 
 
-**Accessibility:** colourblind friendly
+**Accessibility:** [object Object], [object Object]
 
-**Platforms:** offline, fMRI, EEG
+**Platforms:** [object Object], [object Object]
 
-**Devices:** PC
+**Devices:** [object Object]
 
-**Species:** human
+**Species:** Homo sapiens
 
 ## Development
-**Software:** NBS Presentation (version 17)
 
-**Requirements:** two-button response device
+**Software:** [object Object]
+
+**Requirements:** 2-button response box or mouse/keyboard required
 
 ## Administration
 
-Run this task using NBS Presentation.
-
 ## Procedure and Conditions
-
-This task includes one practice and 4 experimental sessions consisting of 40 trials each. In this iteration, two sessions were run with fMRI and two with EEG. The task includes two confirm (Yes-Yes, No-No) and two disconfirm (Yes-No, No-Yes) conditions.
 
 ## Output Files
 
-Log files are output to calculate event timing.
-
 ## Scoring
 
-- number of correct responses (per condition)
-- reaction time (per condition)
+## Additional Features
+
+## Planned Features
+
+## How to Contribute
 
 ## Contributors
 
-Katie Lavigne, Todd Woodward, Steffen Moritz, Jen Riley
+## License and Attribution
+
+**License:** GNU GPL 3.0
+
+## Additional Reading
