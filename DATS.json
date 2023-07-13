@@ -1,0 +1,371 @@
+{
+  "title": "BADE Evidence Integration",
+  "description": "Image-based evidence integration task assessing the bias against disconfirmatory evidence (BADE) for fMRI and EEG/offline administration.",
+  "identifier": {
+    "identifier": "https://doi.org/10.17605/OSF.IO/EKDU5",
+    "identifierSource": "DOI"
+  },
+  "creators": [
+    {
+      "abbreviation": "",
+      "fullName": "",
+      "firstName": "Katie",
+      "middleInitial": "M",
+      "lastName": "Lavigne",
+      "email": "katie.lavigne@mcgill.ca",
+      "affiliations": [
+        {
+          "name": "McGill University"
+        },
+        {
+          "name": "Douglas Research Centre"
+        }
+      ],
+      "roles": [
+        {
+          "value": "Principal Investigator"
+        }
+      ],
+      "extraProperties": [
+        {
+          "category": "ORCID",
+          "values": [
+            {
+              "value": "https://orcid.org/0000-0002-3918-6911"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fullName": "Todd S Woodward",
+      "firstName": "Todd",
+      "middleInitial": "S",
+      "lastName": "Woodward",
+      "email": "toddswoodward@gmail.com",
+      "affiliations": [
+        {
+          "name": "University of British Columbia"
+        }
+      ],
+      "roles": [
+        {
+          "value": "Principal Investigator"
+        }
+      ],
+      "extraProperties": [
+        {
+          "category": "ORCID",
+          "values": [
+            {
+              "value": "https://orcid.org/0000-0001-8083-0079"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fullName": "Steffen Moritz",
+      "firstName": "Steffen",
+      "lastName": "Moritz",
+      "affiliations": [
+        {
+          "name": "University Medical Center Hamburg"
+        }
+      ],
+      "roles": [
+        {
+          "value": "Contributor"
+        }
+      ],
+      "extraProperties": [
+        {
+          "category": "ORCID",
+          "values": [
+            {
+              "value": "https://orcid.org/0000-0001-8601-0143"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "types": [
+    {
+      "information": {
+        "value": "CSV"
+      }
+    }
+  ],
+  "version": "1.0",
+  "privacy": "open",
+  "licenses": [
+    {
+      "name": "GNU GPL 3.0"
+    }
+  ],
+  "distributions": [
+    {
+      "formats": [
+        ""
+      ],
+      "size": 122,
+      "unit": {
+        "value": "MB"
+      },
+      "access": {
+        "landingPage": "https://osf.io/ekdu5/",
+        "authorizations": [
+          {
+            "value": "public"
+          }
+        ]
+      }
+    }
+  ],
+  "primaryPublications": [
+    {
+      "title": "Functional brain networks underlying evidence integration and delusions in schizophrenia",
+      "publicationVenue": "Schizophrenia Bulletin",
+      "authors": [
+        {
+          "fullName": "Katie M Lavigne",
+          "firstName": "Katie",
+          "middleInitial": "M",
+          "lastName": "Lavigne",
+          "affiliations": [
+            {
+              "name": "University of British Columbia"
+            }
+          ]
+        },
+        {
+          "fullName": "Mahesh Menon",
+          "firstName": "Mahesh",
+          "middleInitial": "M",
+          "lastName": "Menon",
+          "affiliations": [
+            {
+              "name": "University of British Columbia"
+            }
+          ]
+        },
+        {
+          "fullName": "Todd S Woodward",
+          "firstName": "Todd",
+          "middleInitial": "S",
+          "lastName": "Woodward",
+          "affiliations": [
+            {
+              "name": "University of British Columbia"
+            }
+          ]
+        }
+      ],
+      "dates": [
+        {
+          "date": "2023-05-03 00:00:00",
+          "type": {
+            "value": "published"
+          }
+        }
+      ],
+      "identifier": {
+        "identifier": "https://doi.org/10.1093/schbul/sbz032",
+        "identifierSource": "DOI"
+      }
+    }
+  ],
+  "isAbout": [
+    {
+      "name": "Homo sapiens",
+      "identifier": {
+        "identifier": "https://www.ncbi.nlm.nih.gov/taxonomy/9606",
+        "identifierSource": "NCBI Taxonomy Database"
+      }
+    }
+  ],
+  "dimensions": [
+    {
+      "name": {
+        "value": ""
+      },
+      "description": ""
+    }
+  ],
+  "acknowledges": [
+    {
+      "name": "Grants",
+      "funders": [
+        {
+          "name": "",
+          "abbreviation": ""
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "value": "bias against disconfirmatory evidence"
+    },
+    {
+      "value": "disconfirmation bias"
+    },
+    {
+      "value": "cognitive bias"
+    },
+    {
+      "value": ""
+    }
+  ],
+  "extraProperties": [
+    {
+      "category": "subjects",
+      "values": [
+        {
+          "value": "N/A"
+        }
+      ]
+    },
+    {
+      "category": "files",
+      "values": [
+        {
+          "value": "223"
+        }
+      ]
+    },
+    {
+      "category": "CONP_status",
+      "values": [
+        {
+          "value": "Canadian"
+        }
+      ]
+    },
+    {
+      "category": "origin_institution",
+      "values": [
+        {
+          "value": "University of British Columbia"
+        }
+      ]
+    },
+    {
+      "category": "origin_city",
+      "values": [
+        {
+          "value": "Vancouver"
+        }
+      ]
+    },
+    {
+      "category": "origin_province",
+      "values": [
+        {
+          "value": "BC"
+        }
+      ]
+    },
+    {
+      "category": "origin_country",
+      "values": [
+        {
+          "value": "Canada"
+        }
+      ]
+    },
+    {
+      "category": "logo",
+      "values": [
+        {
+          "value": "logo.png"
+        }
+      ]
+    },
+    {
+      "category": "contact",
+      "values": [
+        {
+          "value": "Katie M Lavigne, katie.lavigne@mcgill.ca"
+        }
+      ]
+    },
+    {
+      "category": "experimentFunctionAssessed",
+      "values": [
+        {
+          "value": {
+            "value": "Cognitive"
+          }
+        }
+      ]
+    },
+    {
+      "category": "experimentLanguages",
+      "values": [
+        {
+          "value": "English"
+        }
+      ]
+    },
+    {
+      "category": "experimentAccessibility",
+      "values": [
+        {
+          "value": "Colour-blindness"
+        },
+        {
+          "value": "Hearing impairment"
+        }
+      ]
+    },
+    {
+      "category": "experimentModalities",
+      "values": [
+        {
+          "value": {
+            "value": "fMRI"
+          }
+        },
+        {
+          "value": {
+            "value": "EEG"
+          }
+        }
+      ]
+    },
+    {
+      "category": "experimentRequiredDevices",
+      "values": [
+        {
+          "value": "Computer"
+        }
+      ]
+    },
+    {
+      "category": "experimentStimuli",
+      "values": [
+        {
+          "value": "Image"
+        }
+      ]
+    },
+    {
+      "category": "experimentAdditionalRequirements",
+      "values": [
+        {
+          "value": "2-button response box or mouse/keyboard required"
+        }
+      ]
+    },
+    {
+      "category": "REB_statement",
+      "values": [
+        {
+          "value": "In submitting this dataset for inclusion, I declare that these data are not derived from human participants."
+        }
+      ]
+    }
+  ]
+}
