@@ -101,7 +101,7 @@
   "privacy": "open",
   "licenses": [
     {
-      "name": "Academic Public License"
+      "name": "GNU General Public License 3"
     }
   ],
   "distributions": [
@@ -451,7 +451,7 @@
       "category": "experimentRequiredSoftware",
       "values": [
         {
-          "value": "NBS Presentation  version 17"
+          "value": "NBS Presentation   version 17"
         }
       ]
     },
@@ -469,7 +469,9 @@
         {
           "value": [
             [
-              "2-button response box or mouse/keyboard required"
+              [
+                "2-button response box or mouse/keyboard required"
+              ]
             ]
           ]
         }
