@@ -1,6 +1,6 @@
 {
   "title": "BADE Evidence Integration",
-  "description": "Image-based evidence integration task assessing the bias against disconfirmatory evidence (BADE) for fMRI and EEG/offline administration.",
+  "description": "Image-based evidence integration task assessing the bias against disconfirmatory evidence (BADE) for fMRI and EEG/behavioural administration.",
   "identifier": {
     "identifier": "https://doi.org/10.17605/OSF.IO/EKDU5",
     "identifierSource": "DOI"
@@ -8,7 +8,7 @@
   "creators": [
     {
       "abbreviation": "",
-      "fullName": "",
+      "fullName": "Katie M Lavigne",
       "firstName": "Katie",
       "middleInitial": "M",
       "lastName": "Lavigne",
@@ -31,7 +31,7 @@
           "category": "ORCID",
           "values": [
             {
-              "value": "https://orcid.org/0000-0002-3918-6911"
+              "value": "https://orcid.org/0000-0002-3918-691X"
             }
           ]
         }
@@ -42,7 +42,7 @@
       "firstName": "Todd",
       "middleInitial": "S",
       "lastName": "Woodward",
-      "email": "toddswoodward@gmail.com",
+      "email": "",
       "affiliations": [
         {
           "name": "University of British Columbia"
@@ -93,7 +93,7 @@
   "types": [
     {
       "information": {
-        "value": "CSV"
+        "value": "TSV"
       }
     }
   ],
@@ -101,15 +101,16 @@
   "privacy": "open",
   "licenses": [
     {
-      "name": "GNU GPL 3.0"
+      "name": "Academic Public License"
     }
   ],
   "distributions": [
     {
       "formats": [
+        "LOG",
         ""
       ],
-      "size": 122,
+      "size": 335,
       "unit": {
         "value": "MB"
       },
@@ -135,18 +136,21 @@
           "lastName": "Lavigne",
           "affiliations": [
             {
-              "name": "University of British Columbia"
+              "name": "Department of Psychiatry, University of British Columbia, Vancouver, BC, Canada"
+            },
+            {
+              "name": "BC Mental Health and Addictions Research Institute, Vancouver, BC, Canada"
             }
           ]
         },
         {
           "fullName": "Mahesh Menon",
           "firstName": "Mahesh",
-          "middleInitial": "M",
+          "middleInitial": "",
           "lastName": "Menon",
           "affiliations": [
             {
-              "name": "University of British Columbia"
+              "name": "Department of Psychiatry, University of British Columbia, Vancouver, BC, Canada"
             }
           ]
         },
@@ -157,14 +161,17 @@
           "lastName": "Woodward",
           "affiliations": [
             {
-              "name": "University of British Columbia"
+              "name": "Department of Psychiatry, University of British Columbia, Vancouver, BC, Canada"
+            },
+            {
+              "name": "BC Mental Health and Addictions Research Institute, Vancouver, BC, Canada"
             }
           ]
         }
       ],
       "dates": [
         {
-          "date": "2023-05-03 00:00:00",
+          "date": "2019-05-03 00:00:00",
           "type": {
             "value": "published"
           }
@@ -172,6 +179,75 @@
       ],
       "identifier": {
         "identifier": "https://doi.org/10.1093/schbul/sbz032",
+        "identifierSource": "DOI"
+      }
+    },
+    {
+      "title": "Functional brain networks underlying evidence integration and delusional ideation",
+      "publicationVenue": "Schizophrenia Research",
+      "authors": [
+        {
+          "fullName": "Katie M Lavigne",
+          "firstName": "Katie",
+          "middleInitial": "M",
+          "lastName": "Lavigne",
+          "affiliations": [
+            {
+              "name": "Department of Psychiatry, University of British Columbia, Vancouver, BC, Canada"
+            },
+            {
+              "name": "BC Mental Health and Addictions Research Institute, Vancouver, BC, Canada"
+            }
+          ]
+        },
+        {
+          "fullName": "Mahesh Menon",
+          "firstName": "Mahesh",
+          "middleInitial": "",
+          "lastName": "Menon",
+          "affiliations": [
+            {
+              "name": "Department of Psychiatry, University of British Columbia, Vancouver, BC, Canada"
+            }
+          ]
+        },
+        {
+          "fullName": "Steffen Moritz",
+          "firstName": "Steffen",
+          "middleInitial": "",
+          "lastName": "Moritz",
+          "affiliations": [
+            {
+              "name": "Department of Psychiatry and Psychotherapy, University Medical Center Hamburg-Eppendorf, Hamburg, Germany"
+            }
+          ]
+        },
+        {
+          "fullName": "Todd S Woodward",
+          "firstName": "Todd",
+          "middleInitial": "S",
+          "lastName": "Woodward",
+          "affiliations": [
+            {
+              "name": "Department of Psychiatry, University of British Columbia, Vancouver, BC, Canada"
+            },
+            {
+              "name": "BC Mental Health and Addictions Research Institute, Vancouver, BC, Canada"
+            }
+          ]
+        }
+      ],
+      "dates": [
+        {
+          "date": "2020-05-15 00:00:00",
+          "description": "",
+          "type": {
+            "value": "version of record"
+          }
+        }
+      ],
+      "identifier": {
+        "identifier": "https://doi.org/10.1016/j.schres.2019.11.038",
         "identifierSource": "DOI"
       }
     }
@@ -198,8 +274,8 @@
       "name": "Grants",
       "funders": [
         {
-          "name": "",
-          "abbreviation": ""
+          "name": "Canadian Institutes of Health Research",
+          "abbreviation": "CIHR"
         }
       ]
     }
@@ -215,7 +291,7 @@
       "value": "cognitive bias"
     },
     {
-      "value": ""
+      "value": "evidence accumulation"
     }
   ],
   "extraProperties": [
@@ -231,7 +307,7 @@
       "category": "files",
       "values": [
         {
-          "value": "223"
+          "value": "3086"
         }
       ]
     },
@@ -295,9 +371,7 @@
       "category": "experimentFunctionAssessed",
       "values": [
         {
-          "value": {
-            "value": "Cognitive"
-          }
+          "value": "Cognitive"
         }
       ]
     },
@@ -306,6 +380,34 @@
       "values": [
         {
           "value": "English"
+        }
+      ]
+    },
+    {
+      "category": "experimentValidationMeasures",
+      "values": [
+        {
+          "value": "Construct validity"
+        },
+        {
+          "value": "Sensitivity (Schizophrenia-spectrum disorder)"
+        },
+        {
+          "value": ""
+        }
+      ]
+    },
+    {
+      "category": "experimentValidationPopulations",
+      "values": [
+        {
+          "value": "Adult"
+        },
+        {
+          "value": "Healthy"
+        },
+        {
+          "value": "Disease"
         }
       ]
     },
@@ -324,14 +426,13 @@
       "category": "experimentModalities",
       "values": [
         {
-          "value": {
-            "value": "fMRI"
-          }
+          "value": "fMRI"
         },
         {
-          "value": {
-            "value": "EEG"
-          }
+          "value": "EEG"
+        },
+        {
+          "value": "Behavioural"
         }
       ]
     },
@@ -340,6 +441,17 @@
       "values": [
         {
           "value": "Computer"
+        },
+        {
+          "value": "Laptop"
+        }
+      ]
+    },
+    {
+      "category": "experimentRequiredSoftware",
+      "values": [
+        {
+          "value": "NBS Presentation  version 17"
         }
       ]
     },
@@ -355,7 +467,11 @@
       "category": "experimentAdditionalRequirements",
       "values": [
         {
-          "value": "2-button response box or mouse/keyboard required"
+          "value": [
+            [
+              "2-button response box or mouse/keyboard required"
+            ]
+          ]
         }
       ]
     },
