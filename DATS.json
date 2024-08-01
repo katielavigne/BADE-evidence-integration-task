@@ -15,15 +15,12 @@
       "email": "katie.lavigne@mcgill.ca",
       "affiliations": [
         {
-          "name": "McGill University"
-        },
-        {
-          "name": "Douglas Research Centre"
+          "name": "University of British Columbia"
         }
       ],
       "roles": [
         {
-          "value": "Principal Investigator"
+          "value": "Contributor"
         }
       ],
       "extraProperties": [
@@ -93,7 +90,7 @@
   "types": [
     {
       "information": {
-        "value": "TSV"
+        "value": "Tabular data"
       }
     }
   ],
@@ -101,21 +98,23 @@
   "privacy": "open",
   "licenses": [
     {
-      "name": "GNU General Public License 3"
+      "name": "Academic Public License"
+    },
+    {
+      "name": "CC BY-NC-SA"
     }
   ],
   "distributions": [
     {
       "formats": [
-        "LOG",
-        ""
+        "LOG"
       ],
       "size": 335,
       "unit": {
         "value": "MB"
       },
       "access": {
-        "landingPage": "https://osf.io/ekdu5/",
+        "landingPage": "https://doi.org/10.17605/OSF.IO/EKDU5",
         "authorizations": [
           {
             "value": "public"
@@ -259,14 +258,6 @@
         "identifier": "https://www.ncbi.nlm.nih.gov/taxonomy/9606",
         "identifierSource": "NCBI Taxonomy Database"
       }
-    }
-  ],
-  "dimensions": [
-    {
-      "name": {
-        "value": ""
-      },
-      "description": ""
     }
   ],
   "acknowledges": [
@@ -451,7 +442,7 @@
       "category": "experimentRequiredSoftware",
       "values": [
         {
-          "value": "NBS Presentation   version 17"
+          "value": "NBS Presentation version 17"
         }
       ]
     },
@@ -470,7 +461,11 @@
           "value": [
             [
               [
-                "2-button response box or mouse/keyboard required"
+                [
+                  [
+                    "2-button response box or mouse/keyboard required"
+                  ]
+                ]
               ]
             ]
           ]

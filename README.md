@@ -13,7 +13,7 @@ Image-based evidence integration task assessing the bias against disconfirmatory
 **Languages:** English
 
 **Validation:**
-  * Measures: Construct validity, Sensitivity (Schizophrenia-spectrum disorder), 
+  * Measures: Construct validity, Sensitivity (Schizophrenia-spectrum disorder)
   * Populations: Adult, Healthy, Disease
 
 **Accessibility:** Colour-blindness, Hearing impairment
@@ -40,17 +40,27 @@ This task includes one practice and 4 experimental sessions consisting of 40 tri
 
 ## Output Files
 
-Log files are output to calculate event timing. An excel file to automate calculation of timing vectors is included in the repository.
+Log files are output to calculate event timing.
 
 ## Scoring
 
-- number of correct responses (per condition)
+- accuracy & correct responses (per condition)
 - reaction time (per condition)
 
 ## License and Attribution
 
-**License:** Academic Public License
+**License**
 
-If you use this task in your work, please cite the task itself as indicated on the Open Science Framework, e.g., (in APA format): 
+This project is distributed under two distinct licenses:
+
+Source Code: The source code of this project is distributed under the Academic Public License. This license allows for academic use and modification of the code but is not intended for commercial use.
+
+Documentation: The documentation of this project, including but not limited to README files, wikis, and help files, is distributed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0). This license allows others to remix, adapt, and build upon our work non-commercially, as long as they credit the author and license their new creations under the identical terms.
+
+Please read the LICENSE_code and LICENSE_doc files for the specific terms of these licenses.
+
+**Attribution**
+
+If you use this task in your work, please cite it as indicated on the Open Science Framework, e.g., (in APA format): 
 
 Lavigne, K. M., Woodward, T., Moritz, S., & Menon, M. (2024, June 12). BADE Evidence Integration Task. https://doi.org/10.17605/OSF.IO/EKDU5
